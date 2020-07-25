@@ -1,0 +1,260 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Own code */
+:root {
+  --cursorPath: url(''), auto;
+}
+
+body {
+  position: relative;
+  padding: 40px;
+  height: 91.8vh;
+  text-align: center;
+  background-image: radial-gradient(circle farthest-side at 50% 30%, white, #00c4b0);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: 'Rowdies', cursive;
+  font-size: 50px;
+}
+
+h2 {
+  margin-top: 20px;
+  font-size: 35px;
+  font-family: 'Lobster', cursive;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+#game {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  width: 600px;
+  height: 600px;
+  vertical-align: middle;
+  margin: 40px auto 0;
+  border-radius: 8px;
+}
+
+#game .square {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 200px;
+  width: 200px;
+  font-size: 90px;
+  background-color: lightsteelblue;
+  outline: none;
+  cursor: var(--cursorPath);
+}
+
+#game .square:hover {
+  background-color: lightskyblue;
+}
+
+#game .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#user-settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 30px auto 0;
+  width: 600px;
+  font-size: 40px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#user-settings > div {
+  /*display: flex;*/
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#user-settings > div input {
+  display: inline-block;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  padding: 0 8px 0 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#user-settings > div p {
+  display: inline-block;
+  line-height: 0px;
+  font-size: 26px;
+}
+
+#user-settings > div input.hide,
+#user-settings > div p.hide,
+#user-settings > div button.hide {
+  display: none;
+}
+
+#user-settings > div button {
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 3px 0 black;
+          box-shadow: 0 0 3px 0 black;
+  text-transform: uppercase;
+}
+
+#user-settings > div button:hover {
+  background-color: lightsteelblue;
+}
+
+#user-settings > div button.active-mode {
+  background-color: white;
+}
+
+#user-settings > div button#start-btn {
+  height: 30px;
+  background-color: lightskyblue;
+}
+
+#user-settings > div button#two-player-btn {
+  border-radius: 4px 0 0 4px;
+}
+
+#user-settings > div button#bot-btn {
+  border-radius: 0 4px 4px 0;
+}
+
+aside {
+  visibility: hidden;
+  position: absolute;
+  font-family: 'Lobster', cursive;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+aside div {
+  position: relative;
+  margin: 300px auto;
+  padding: 40px;
+  background-color: #00c4b0;
+  width: 0;
+  height: 0;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 5px 1px black;
+          box-shadow: 0 0 5px 1px black;
+  -webkit-transition: all 0.6s cubic-bezier(0.82, 0, 0.51, 1.4);
+  transition: all 0.6s cubic-bezier(0.82, 0, 0.51, 1.4);
+}
+
+aside div.transition {
+  width: 350px;
+  height: 115px;
+}
+
+aside div.transition button {
+  font-size: 20px;
+  width: 200px;
+  height: 50px;
+}
+
+aside div.transition p {
+  font-size: 30px;
+}
+
+aside div p {
+  font-size: 0;
+  -webkit-transition: all 0.6s cubic-bezier(0.82, 0, 0.51, 1.4);
+  transition: all 0.6s cubic-bezier(0.82, 0, 0.51, 1.4);
+}
+
+aside div button {
+  width: 0;
+  height: 0;
+  margin-top: 30px;
+  background-color: lightskyblue;
+  border-radius: 4px;
+  font-size: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-transition: all 0.6s cubic-bezier(0.82, 0, 0.51, 1.4);
+  transition: all 0.6s cubic-bezier(0.82, 0, 0.51, 1.4);
+}
+
+.visible {
+  visibility: visible;
+}
+/*# sourceMappingURL=main.css.map */

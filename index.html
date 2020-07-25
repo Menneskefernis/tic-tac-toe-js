@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch&family=Lobster&family=Ranchers&family=Rowdies&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <hgroup>
+            <h1>Tic Tac Toe</h1>
+            <h2>For the Win!</h2>
+        </hgroup>
+    </header>
+    <section id="game">
+        <button class="square" data-id="0"></button>
+        <button class="square" data-id="1"></button>
+        <button class="square" data-id="2"></button>
+        <button class="square" data-id="3"></button>
+        <button class="square" data-id="4"></button>
+        <button class="square" data-id="5"></button>
+        <button class="square" data-id="6"></button>
+        <button class="square" data-id="7"></button>
+        <button class="square" data-id="8"></button>
+        <div class="overlay"></div>
+    </section>
+
+    <section id="user-settings">
+        <div id="player1">
+            <div>🦍</div>
+            <input id="player1-input" type="text" min="4" placeholder="Player 1 name"><p id="player1-name" class="hide"></p>
+        </div>
+        <div>
+            <div id="mode-switcher">
+                <button id="two-player-btn" class="active-mode">Two-player</button><!--
+            --><button id="bot-btn">Computer</button>
+            </div>
+            <button id="start-btn">Start game!</button>
+        </div>
+        <div id="player2">
+            <div>🦧</div>
+            <input id="player2-input" type="text" min="4" placeholder="Player 2 name"><p id="player2-name" class="hide"></p>
+        </div>
+    </section>
+    <aside>
+        <div>
+            <p>Something random</p>
+            <button>Rematch?</button>
+        </div>
+    </aside>
+    <script src="/js/main.js"></script>
+</body>
+</html>
