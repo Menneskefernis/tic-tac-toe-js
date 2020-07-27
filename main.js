@@ -219,7 +219,7 @@ const Gameboard = (() => {
     };
 
     const setCursor = (cursorName) => {
-        this.boardArea.style.setProperty('--cursorPath', `url('/Menneskefernis/images/${cursorName}'), auto`);
+        this.boardArea.style.setProperty('--cursorPath', `url('https://menneskefernis.github.io/images/${cursorName}'), auto`);
     };
 
     const isFreeSquare = (index) => {
