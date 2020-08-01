@@ -219,7 +219,7 @@ const Gameboard = (() => {
     };
 
     const setCursor = (cursorName) => {
-        this.boardArea.style.setProperty('--cursorPath', `url('/images/${cursorName}'), auto`);
+        this.boardArea.style.setProperty('--cursorPath', `url('./images/${cursorName}'), auto`);
     };
 
     const isFreeSquare = (index) => {
